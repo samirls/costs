@@ -6,7 +6,6 @@ import Loading from "../layout/Loading";
 import LinkButton from "../layout/LinkButton";
 import ProjectCard from "../project/ProjectCard";
 import { useState, useEffect } from "react";
-import Graphics from "../graphics/Graphics";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -60,7 +59,6 @@ function Projects() {
       </div>
       {message && <Message type="success" msg={message} />}
       {projectMessage && <Message type="success" msg={projectMessage} />}
-      <Graphics />
       <Container customClass="start">
         {projects.length > 0 &&
           projects.map((project) => (

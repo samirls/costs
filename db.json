@@ -30,28 +30,15 @@
       "id": 3
     },
     {
-      "name": "78678",
-      "budget": "678678678",
+      "name": "Autorização de freela",
+      "budget": "4000",
       "category": {
         "id": "1",
         "name": "Infra"
       },
-      "cost": 5021020,
-      "services": [
-        {
-          "name": "456456",
-          "cost": "456456",
-          "description": "456456",
-          "id": "d38bd15b-30d4-4200-8454-a3389a330b0c"
-        },
-        {
-          "name": "6456456456456",
-          "cost": "4564564",
-          "description": "456456",
-          "id": "9aaf19ac-0b01-4f3d-9b19-681ede985622"
-        }
-      ],
-      "id": 4
+      "cost": 0,
+      "services": [],
+      "id": 5
     }
   ],
   "categories": [
