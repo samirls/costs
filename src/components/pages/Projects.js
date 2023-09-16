@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 function Projects() {
   const [projects, setProjects] = useState([]);
   const [removeLoading, setRemoveLoading] = useState(false);
-  const [projectMessage, setProjectMessage] = useState('');
+  const [projectMessage, setProjectMessage] = useState("");
 
   const location = useLocation();
   let message = "";
@@ -19,21 +19,19 @@ function Projects() {
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch("http://localhost:5000/projects", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+    fetch("http://localhost:5000/projects", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        setProjects(data);
+        setRemoveLoading(true);
       })
-        .then((resp) => resp.json())
-        .then((data) => {
-          console.log(data);
-          setProjects(data);
-          setRemoveLoading(true);
-        })
-        .catch((err) => console.log(err));
-    }, 300);
+      .catch((err) => console.log(err));
   }, []);
 
   function removeProject(id) {
@@ -46,7 +44,7 @@ function Projects() {
       .then((resp) => resp.json())
       .then(() => {
         setProjects(projects.filter((project) => project.id !== id));
-        setProjectMessage('Projeto removido com sucesso!')
+        setProjectMessage("Projeto removido com sucesso!");
       })
       .catch((err) => console.log(err));
   }
